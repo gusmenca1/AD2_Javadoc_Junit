@@ -1,5 +1,7 @@
 package javabean;
 
+import java.util.Scanner;
+
 /**
  * Esta clase proporciona métodos para realizar varias operaciones de suma.
  * <p>
@@ -77,5 +79,59 @@ public class Suma_GustavoMendoza {
      */
     public double getValorAcumulado() {
         return valorAcumulado;
+    }
+
+
+    /**
+     * Menú interactivo en la consola para realizar las diferentes operaciones de suma.
+     * El usuario puede elegir entre sumar dos números reales, dos números enteros, tres números,
+     * sumar un número al acumulado actual o recuperar el valor acumulado hasta el momento.
+     * El menú se repite hasta que el usuario elige la opción 'Salir'.
+     *
+     * Las operaciones disponibles son:
+     * - 'R' para sumar dos números reales. Por ejemplo, suma 2.0 y 3.0.
+     * - 'E' para sumar dos números enteros. Por ejemplo, suma 3 y 4.
+     * - 'T' para sumar tres números. Por ejemplo, suma 4, 5, y 7.
+     * - 'A' para añadir un número al acumulado. Por ejemplo, añade 4 al acumulado.
+     * - 'C' para mostrar el valor acumulado actual.
+     * - 'X' para salir del menú y terminar la ejecución del metodo.
+     *
+     * @throws InputMismatchException si se ingresa un tipo de dato incorrecto al seleccionar opciones.
+     *        Asegúrese de ingresar caracteres únicamente, ya que otros tipos de datos causarán errores en la ejecución.
+     */
+    public static void menu(){
+        Scanner leer = new Scanner(System.in);
+        char opcion;
+
+        do {
+            System.out.println("¿Qué quieres hacer?");
+            System.out.println("Sumar reales (R)");
+            System.out.println("Sumar enteros (E)");
+            System.out.println("Sumar tres números (T)");
+            System.out.println("Sumar acumulado (A)");
+            System.out.println("Conseguir acumulado (C)");
+            System.out.println("Salir (X)");
+
+            opcion = leer.next().charAt(0);
+            switch (opcion){
+                case 'R':
+                    Suma_GustavoMendoza.sumarReales(2,3);
+                    break;
+                case 'E':
+                    Suma_GustavoMendoza.sumarEnteros(3,4);
+                    break;
+                case 'T':
+                    Suma_GustavoMendoza.sumarTresnumeros(4,5,7);
+                    break;
+                case 'A':
+                    Suma_GustavoMendoza.sumarAcumulado(4);
+                    break;
+                case 'C':
+                    Suma_GustavoMendoza.getValorAcumulado();
+                    break;
+
+            }
+        }while (leer.nextInt() != "X");
+
     }
 }
