@@ -1,5 +1,7 @@
 package javabean;
 
+import java.util.Scanner;
+
 /**
  * La clase Producto_GustavoMendoza proporciona métodos para realizar operaciones matemáticas básicas
  * como multiplicación y potencia de números.
@@ -72,4 +74,53 @@ public class Producto_GustavoMendoza {
             throw new IllegalArgumentException("Una base negativa y un exponente fraccionario da un número complejo como resultado.");
         }
         return Math.pow(base, exponente);    }
+
+    /**
+     * Menú interactivo en la consola para realizar diferentes operaciones de multiplicación.
+     * El usuario puede elegir entre multiplicar dos números reales, dos números enteros, tres números,
+     * calcular la potencia de un número, o salir del programa.
+     *
+     * Las opciones del menú son:
+     * - 'R' para multiplicar dos números reales. Ejemplo: multiplica 2.0 y 3.0.
+     * - 'E' para multiplicar dos números enteros. Ejemplo: multiplica 5 y 4.
+     * - 'T' para multiplicar tres números. Ejemplo: multiplica 4, 3 y 2.
+     * - 'P' para calcular la potencia de un número. Ejemplo: calcula 2 elevado a la potencia de 3.
+     * - 'X' para salir del menú.
+     *
+     * Este metodo se repetirá hasta que el usuario decida salir seleccionando 'X'.
+     *
+     * @throws InputMismatchException si se ingresa un tipo de dato incorrecto al seleccionar opciones.
+     *        Asegúrese de ingresar caracteres únicamente, ya que otros tipos de datos causarán errores en la ejecución.
+     */
+    public static void menu(){
+        Scanner leer = new Scanner(System.in);
+        char opcion;
+
+        do {
+            System.out.println("¿Qué quieres hacer?");
+            System.out.println("Multiplicar reales (R)");
+            System.out.println("Multiplicar enteros (E)");
+            System.out.println("Multiplicar tres números (T)");
+            System.out.println("Potencia (P)");
+            System.out.println("Salir (X)");
+
+            opcion = leer.next().charAt(0);
+            switch (opcion){
+                case 'R':
+                    Producto_GustavoMendoza.multiplicarReales(2,3);
+                    break;
+                case 'E':
+                    Producto_GustavoMendoza.multiplicarEnteros(5,4);
+                    break;
+                case 'T':
+                    Producto_GustavoMendoza.multiplicarTresnumeros(4,3,2);
+                    break;
+                case 'P':
+                    Producto_GustavoMendoza.potencia(2,3);
+                    break;
+            }
+        }while (leer.nextInt() != "X");
+
+    }
+
 }
