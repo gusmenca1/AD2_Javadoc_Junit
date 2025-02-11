@@ -1,3 +1,5 @@
+package javabean;
+
 public class Cociente_ClaudiaRM {
 
     /**
@@ -18,7 +20,10 @@ public class Cociente_ClaudiaRM {
      * @return El cociente de a y b.
      * @throws ArithmeticException Si b es cero.
      */
-    public double dividir(double a, double b) {
+    public double dividirReales(double a, double b) {
+        if(b==0){
+            throw new ArithmeticException("No se puede dividir entre 0");
+        }
         return a / b;
     }
 
@@ -31,7 +36,10 @@ public class Cociente_ClaudiaRM {
      * @return El cociente de a y b.
      * @throws ArithmeticException Si b es cero.
      */
-    public int dividir(int a, int b) {
+    public int dividirEnteros(int a, int b) {
+        if(b==0){
+            throw new ArithmeticException("No se puede dividir entre 0");
+        }
         return a / b;
     }
 
@@ -45,6 +53,9 @@ public class Cociente_ClaudiaRM {
      * definido.
      */
     public double inverso(double a) {
+        if(a==0){
+            throw new ArithmeticException("El inverso de 0 no está definido");
+        }
         return 1 / a;
     }
 
@@ -57,6 +68,9 @@ public class Cociente_ClaudiaRM {
      * @throws IllegalArgumentException Si a es negativo.
      */
     public double raiz(double a) {
+        if(a<0){
+            throw new IllegalArgumentException("Una raíz cuadrada de un nuemero negativo no tiene solución");
+        }
         return Math.sqrt(a);
     }
 }

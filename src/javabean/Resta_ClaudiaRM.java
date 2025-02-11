@@ -1,3 +1,5 @@
+package javabean;
+
 public class Resta_ClaudiaRM {
 
     /**
@@ -19,7 +21,7 @@ public class Resta_ClaudiaRM {
      * @param b El sustraendo.
      * @return La diferencia entre a y b.
      */
-    public double restar(double a, double b) {
+    public double restarReales(double a, double b) {
         return a - b;
     }
 
@@ -31,7 +33,7 @@ public class Resta_ClaudiaRM {
      * @param b El sustraendo.
      * @return La diferencia entre a y b.
      */
-    public int restar(int a, int b) {
+    public int restarEnteros(int a, int b) {
         return a - b;
     }
 
@@ -44,7 +46,7 @@ public class Resta_ClaudiaRM {
      * @param c El segundo sustraendo.
      * @return La diferencia entre a, b y c.
      */
-    public double restar(double a, double b, double c) {
+    public double restarTresReales(double a, double b, double c) {
         return a - b - c;
     }
 

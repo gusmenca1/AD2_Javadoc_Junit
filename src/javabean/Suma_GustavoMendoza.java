@@ -1,6 +1,7 @@
-import java.util.Scanner;
-import java.util.InputMismatchException;
+package javabean;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 /**
  * Esta clase proporciona métodos para realizar varias operaciones de suma.
@@ -102,6 +103,7 @@ public class Suma_GustavoMendoza {
     public static void menu(){
         Scanner leer = new Scanner(System.in);
         char opcion;
+        Suma_GustavoMendoza suma = new Suma_GustavoMendoza();  // Crear una instancia de la clase
 
         do {
             System.out.println("¿Qué quieres hacer?");
@@ -113,27 +115,25 @@ public class Suma_GustavoMendoza {
             System.out.println("Salir (X)");
 
             opcion = leer.next().charAt(0);
-            Suma_GustavoMendoza suma = new Suma_GustavoMendoza();
-            switch (opcion) {
+            switch (opcion){
                 case 'R':
-                    System.out.println("Resultado: " + suma.sumarReales(2,3));
+                    suma.sumarReales(2,3);
                     break;
                 case 'E':
-                    System.out.println("Resultado: " + suma.sumarEnteros(3,4));
+                    suma.sumarEnteros(3,4);
                     break;
                 case 'T':
-                    System.out.println("Resultado: " + suma.sumarTresnumeros(4,5,7));
+                    suma.sumarTresnumeros(4,5,7);
                     break;
                 case 'A':
-                    System.out.println("Nuevo valor acumulado: " + suma.sumarAcumulado(4));
+                    suma.sumarAcumulado(4);
                     break;
                 case 'C':
-                    System.out.println("Valor acumulado: " + suma.getValorAcumulado());
+                    suma.getValorAcumulado();
                     break;
 
             }
-        } while (!leer.next().equals("X")); // Corregido el error de comparación
+        }while (leer.nextLine().equals("X"));
+
     }
 }
-
-
