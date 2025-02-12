@@ -1,5 +1,6 @@
 package javabean;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -102,6 +103,7 @@ public class Suma_GustavoMendoza {
     public static void menu(){
         Scanner leer = new Scanner(System.in);
         char opcion;
+        Suma_GustavoMendoza suma = new Suma_GustavoMendoza();  // Crear una instancia de la clase
 
         do {
             System.out.println("¿Qué quieres hacer?");
@@ -115,23 +117,23 @@ public class Suma_GustavoMendoza {
             opcion = leer.next().charAt(0);
             switch (opcion){
                 case 'R':
-                    Suma_GustavoMendoza.sumarReales(2,3);
+                    suma.sumarReales(2,3);
                     break;
                 case 'E':
-                    Suma_GustavoMendoza.sumarEnteros(3,4);
+                    suma.sumarEnteros(3,4);
                     break;
                 case 'T':
-                    Suma_GustavoMendoza.sumarTresnumeros(4,5,7);
+                    suma.sumarTresnumeros(4,5,7);
                     break;
                 case 'A':
-                    Suma_GustavoMendoza.sumarAcumulado(4);
+                    suma.sumarAcumulado(4);
                     break;
                 case 'C':
-                    Suma_GustavoMendoza.getValorAcumulado();
+                    suma.getValorAcumulado();
                     break;
 
             }
-        }while (leer.nextInt() != "X");
+        }while (leer.nextLine().equals("X"));
 
     }
 }
