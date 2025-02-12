@@ -1,6 +1,7 @@
 package org.example;
 
 import javabean.Cociente_ClaudiaRM;
+import javabean.Resta_ClaudiaRM;
 import javabean.Producto_GustavoMendoza;
 import javabean.Suma_GustavoMendoza;
 
@@ -8,23 +9,27 @@ import java.util.Scanner;
 
 /**
  * Clase main que proporciona un menú para realizar operaciones matemáticas.
- * El usuario puede elegir entre sumar, restar, multiplicar, dividir o salir del programa.
+ * El usuario puede elegir entre sumar, restar, multiplicar, dividir o salir del
+ * programa.
  *
- * Cada opción activa un submenú correspondiente a la operación seleccionada, que está gestionado
- * por una clase específica para cada tipo de operación.
+ * Cada opción activa un submenú correspondiente a la operación seleccionada,
+ * que está gestionado por una clase específica para cada tipo de operación.
  *
  *  @author Gustavo Mendoza
- *  @version 1.0
+    @author Claudia Rodríguez Mayán
+ *  @version 2.0
  *  @see Producto_GustavoMendoza
  *  @see Suma_GustavoMendoza
+ *  @see Resta_ClaudiaRM
+ *  @see Cociente_ClaudiaRM
  *
  */
 
 public class Main {
 
     /**
-     * Menú principal del programa. Presenta un menú de opciones y ejecuta la opción
-     * seleccionada hasta que el usuario decide salir.
+     * Menú principal del programa. Presenta un menú de opciones y ejecuta la
+     * opción seleccionada hasta que el usuario decide salir.
      *
      * @param args argumentos de línea de comandos (no utilizados).
      */
@@ -48,13 +53,13 @@ public class Main {
                     Suma_GustavoMendoza.menu();
                     break;
                 case 'R':
-                    //Resta_ClaudiaRM.menu();
+                    Resta_ClaudiaRM.menu();
                     break;
                 case 'M':
                     Producto_GustavoMendoza.menu();
                     break;
                 case 'D':
-                    //Cociente_ClaudiaRM.menu();
+                    Cociente_ClaudiaRM.menu();
                     break;
             }
         }while (leer.nextLine().equals("X"));

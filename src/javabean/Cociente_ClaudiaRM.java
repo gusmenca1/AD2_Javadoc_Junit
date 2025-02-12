@@ -1,5 +1,7 @@
 package javabean;
 
+import java.util.Scanner;
+
 public class Cociente_ClaudiaRM {
 
     /**
@@ -69,9 +71,49 @@ public class Cociente_ClaudiaRM {
      */
     public double raiz(double a) {
         if(a<0){
-            throw new IllegalArgumentException("Una raíz cuadrada de un nuemero negativo no tiene solución");
+            throw new IllegalArgumentException("Una raíz cuadrada de un " +
+                    "numero " + "negativo no tiene solución");
         }
         return Math.sqrt(a);
     }
+
+    //Menú de la calculadora.
+    public static void menu(){
+        Scanner leer = new Scanner(System.in);
+        char opcion;
+
+        // Crear una instancia de la clase.
+        Cociente_ClaudiaRM cociente = new Cociente_ClaudiaRM();
+
+        do {
+            System.out.println("¿Qué quieres hacer?");
+            System.out.println("Dividir reales (R)");
+            System.out.println("Dividir enteros enteros (E)");
+            System.out.println("Calcular el inverso de un número real (I)");
+            System.out.println("Calcular la raíz cuadrada de un número real (C)");
+            System.out.println("Salir (X)");
+
+            opcion = leer.next().charAt(0);
+            switch (opcion){
+                case 'R':
+                    cociente.dividirReales(2,3);
+                    break;
+                case 'E':
+                    cociente.dividirEnteros(5,4);
+                    break;
+                case 'I':
+                    cociente.inverso(4);
+                    break;
+                case 'C':
+                    cociente.raiz(2);
+                    break;
+
+            }
+        }while (leer.nextLine().equals("X"));
+
+    }
+
+
+
 }
 
